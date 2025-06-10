@@ -1,0 +1,14 @@
+<% layout('layout') -%>
+
+<h2>Perfil do Usuário</h2>
+
+<div class="user-info">
+    <h3>Informações da Sessão</h3>
+    <p><strong>Username:</strong> <%= user.username %></p>
+    <p><strong>ID:</strong> <%= user.id %></p>
+    <p><strong>Status:</strong> Autenticado</p>
+</div>
+
+<p>Esta página também é protegida pelo middleware de autenticação.</p>
+
+<a href="/dashboard" class="btn">Voltar ao Dashboard</a>

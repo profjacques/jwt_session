@@ -1,0 +1,14 @@
+<% layout('layout') -%>
+
+<h2>Dashboard</h2>
+
+<div class="user-info">
+    <strong>Usuário:</strong> <%= user.username %><br>
+    <strong>ID:</strong> <%= user.id %>
+</div>
+
+<p>Esta é uma área protegida que só pode ser acessada por usuários autenticados.</p>
+
+<p>O middleware <code>ensureAuthenticated</code> verifica se <code>req.isAuthenticated()</code> retorna true antes de permitir o acesso a esta página.</p>
+
+<a href="/profile" class="btn">Ver Perfil</a>

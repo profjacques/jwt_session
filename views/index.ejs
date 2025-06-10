@@ -1,0 +1,27 @@
+<% layout('layout') -%>
+
+<h1>Sistema de Autenticação com Passport.js</h1>
+
+<% if (typeof message !== 'undefined' && message) { %>
+    <div class="message success"><%= message %></div>
+<% } %>
+
+<% if (isAuthenticated) { %>
+    <div class="user-info">
+        <strong>Bem-vindo, <%= user.username %>!</strong>
+        <p>Você está logado no sistema.</p>
+        <a href="/dashboard" class="btn">Ir para Dashboard</a>
+    </div>
+<% } else { %>
+    <p>Este é um exemplo prático de autenticação baseada em sessão usando Node.js e Passport.js.</p>
+    <p>Recursos implementados:</p>
+    <ul>
+        <li>Autenticação local com username/password</li>
+        <li>Sessões seguras com express-session</li>
+        <li>Hashing de senhas com bcrypt</li>
+        <li>Middleware de proteção de rotas</li>
+        <li>Serialização/desserialização de usuários</li>
+        <li>Configurações de segurança para cookies</li>
+    </ul>
+    <p><a href="/auth/login" class="btn">Fazer Login</a> ou <a href="/auth/register" class="btn">Registrar</a></p>="btn">Fazer Login</a> ou <a href="/register" class="btn">Registrar</a></p>
+<% } %>

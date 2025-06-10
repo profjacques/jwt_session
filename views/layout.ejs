@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Autenticação</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="nav">
+            <a href="/">Início</a>
+            <% if (isAuthenticated) { %>
+                <a href="/dashboard">Dashboard</a>
+                <a href="/profile">Perfil</a>
+                <span style="float: right;">
+                    Olá, <%= user.username %>! 
+                    <form method="POST" action="/auth/logout" class="logout-form">
+                        <button type="submit" class="btn btn-danger" style="margin-left: 10px;">Logout</button>
+                    </form>
+                </span>
+            <% } else { %>
+                <a href="/auth/login">Login</a>
+                <a href="/auth/register">Registrar</a>
+            <% } %>
+        </nav>
+        
+        <%- body %>
+    </div>
+    <script src="/js/main.js"></script>
+</body>
+</html>
